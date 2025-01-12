@@ -345,7 +345,10 @@ Section: Search
   justify-content: center;
 }
 
-.go-back {}
+.go-back {
+  display: flex;
+  gap: 2rem
+}
 
 .radio-button_wrapper:nth-child(2)::after {
   content: '';
@@ -394,7 +397,7 @@ Section: Search
 .inputs-container input::placeholder {
   font-family: 'iran-sans';
   color: #75757569;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .inputs-container svg {
@@ -626,10 +629,11 @@ Section: Search
 
 
 .quick-access-container {
+  align-items: center;
   display: flex;
+  padding: 8px;
   flex-wrap: wrap;
-  margin-top: 3rem;
-  padding-bottom: 3rem;
+  overflow-x: auto;
 }
 
 .quick-access-container svg {
@@ -642,6 +646,13 @@ Section: Search
   display: flex;
   flex-grow: 1;
   padding: .9rem;
+  width: 25rem;
+}
+
+.items-wrapper {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .items a {
@@ -739,12 +750,23 @@ Section: Search
 
 .sub-items_mobile {
   margin-top: 1rem;
+  display: none;
 }
 
 .sub-menu_mobile {
   display: flex;
   align-items: center;
 
+}
+
+.sub-items_mobile-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+  background-color: var(--bg-color);
 }
 
 .sub-menu_mobile li {
@@ -785,6 +807,68 @@ Section: Search
 }
 
 
+.mobile-nav {
+  background-color: #fff;
+  bottom: 0;
+  box-shadow: 0 3px 15px #00000026;
+  display: none;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  z-index: 1002;
+}
+
+.router-link {
+  all: unset;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  height: 65px;
+  justify-content: center;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.nav-option {}
+
+.mobile-nav_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.mobile-nav_icon svg path {
+  fill: #75828f;
+}
+
+
+
+.mobile-nav_title {
+  font-size: 12px;
+  color: #75828f;
+  line-height: 2.4rem;
+}
+
+.fa-house,
+.mobile-nav_icon_ticket {
+  width: 2rem;
+  height: 1.8rem;
+}
+
+.fa-circle-plus {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.mobile-nav_icon_user {
+  width: 1.6rem;
+  height: 1.8rem;
+}
 
 /* 
 ==========================================================
@@ -1050,6 +1134,11 @@ Section: Accordion
 
 .FAQ-box {
   cursor: pointer;
+  border-bottom: 1px solid #e5e7eb;
+  height: 6rem;
+  overflow: hidden;
+  transition: all .25s ease-in;
+
 }
 
 .accordion-btn {
@@ -1066,6 +1155,7 @@ Section: Accordion
   font-size: 14px;
   color: #3d464f;
   font-weight: 700;
+  text-align: right;
 }
 
 .mr-icon-container {
@@ -1104,27 +1194,20 @@ Section: Accordion
 .panel {
   font-size: 14px;
   color: #3d464f;
-  height: 0;
-  overflow: hidden;
   padding-bottom: 0;
-  transition: all .25s ease-out 10ms;
 }
 
-.panel--toggle {
-  font-size: 14px;
-  color: #3d464f;
+.FAQ-box_panel {
+  overflow: hidden;
+  transition: all .25s ease-in;
   height: auto;
-  overflow: visible;
-  padding-bottom: 2.2rem;
-  transition: all .25s ease-out 10ms;
+  padding-bottom: 1rem;}
 
+.faq-boxes_active {
+  height: 16rem;
+  transition: all .25s ease-in;
 }
 
-.line {
-  background-color: #f0f3f7;
-  height: 1px;
-  width: 100%;
-}
 
 
 .busy-way-container {
@@ -1502,10 +1585,12 @@ Footer
   justify-content: center;
   padding: .8rem;
 }
-.footer-suport-accordion__icon--toggle{
+
+.footer-suport-accordion__icon--toggle {
   transform: rotate(180deg);
 
 }
+
 .footer-accordion__icon--toggle {
   transform: rotate(180deg);
 }
@@ -1604,16 +1689,25 @@ Footer
 .intro-logos_container {
   display: flex;
   justify-content: space-between;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-top: 2rem;
 }
 
 .intro-logos_container span {
-  width: 8rem;
-  height: 8rem;
+  height: 80px;
+  width: 80px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .intro-logos_container span img {
-  width: 100%;
-  height: 100%;
+  object-fit: unset;
+  height: 80px;
+  width: 80px;
 }
 
 
