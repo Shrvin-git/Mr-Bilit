@@ -108,6 +108,10 @@
 /* =========================================================================================== */
 
 @media screen and (max-width: 768px) {
+    .sub-items_mobile {
+        display: block;
+    }
+
     .replace-location {
         position: absolute;
         left: 3rem;
@@ -137,6 +141,11 @@
         margin: 0;
     }
 
+    .search-from__wrapper {
+        padding: 1.5rem;
+        border-radius: 0;
+    }
+
     .inputs-container,
     .location-picker-container {
         flex-direction: column;
@@ -147,6 +156,10 @@
     .datepicker-inputs-container {
         margin-top: 1rem;
         row-gap: 1rem;
+    }
+
+    .radio-button_wrapper:nth-child(2)::after {
+        display: none;
     }
 
     .traveler-container,
@@ -199,9 +212,7 @@
         width: 100%;
     }
 
-    .items {
-        width: 48%;
-    }
+
 
     .advantage-item-container {
         margin: 0 !important;
@@ -281,6 +292,18 @@
         justify-content: space-between;
         width: 100%;
     }
+
+    .title {
+        font-size: 12px;
+    }
+
+    .intro-logos_container span {
+        margin: 0 6px;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
 }
 
 /* =========================================================================================== */
@@ -288,7 +311,16 @@
 @media screen and (max-width: 750px) {}
 
 /* =========================================================================================== */
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+    .advantage-item-container p {
+        font-size: 11px;
+        margin: 5px 0;
+    }
+
+    .reserv-link a {
+        width: 15rem;
+    }
+}
 
 
 /* =========================================================================================== */
@@ -296,6 +328,14 @@
 @media screen and (max-width:450px) {
     .top-row_left {
         width: 100%;
+    }
+
+    .advantage-item-container span {
+        font-size: 13px;
+    }
+
+    .advantage-item-container {
+        padding: 0;
     }
 }
 
